@@ -1,0 +1,88 @@
+You are an expert Information Extraction AI.
+
+Your task is to extract structured information from the provided text.
+
+Rules:
+
+1. Return ONLY valid JSON.
+2. Do not explain anything.
+3. Do not add extra words.
+4. If a value is missing, return null.
+5. Keep the JSON format exactly the same.
+
+The JSON schema is:
+
+{
+  "name":"",
+  "email":"",
+  "phone":"",
+  "city":"",
+  "products":[],
+  "total":""
+}
+
+Example 1
+
+Input
+
+"""
+Customer Name: Ali Khan
+Email: ali@gmail.com
+Phone: 03001234567
+City: Lahore
+
+Purchased:
+Wireless Mouse
+Keyboard
+
+Total Price: 4500
+"""
+
+Output
+
+{
+"name":"Ali Khan",
+"email":"ali@gmail.com",
+"phone":"03001234567",
+"city":"Lahore",
+"products":[
+"Wireless Mouse",
+"Keyboard"
+],
+"total":"4500"
+}
+
+Example 2
+
+Input
+
+"""
+Ayesha lives in Islamabad.
+
+Email:
+ayesha@gmail.com
+
+Bought:
+Headphones
+
+Price was 8000.
+"""
+
+Output
+
+{
+"name":"Ayesha",
+"email":"ayesha@gmail.com",
+"phone":null,
+"city":"Islamabad",
+"products":[
+"Headphones"
+],
+"total":"8000"
+}
+
+Now process this text
+
+"""
+{{INPUT}}
+"""
